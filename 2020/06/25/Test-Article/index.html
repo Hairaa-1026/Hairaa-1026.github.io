@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Test Article | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="入门 | Python对文件的操作（初级）零、利用Python可以处理哪些常见的文件？​    利用File方法可以处理文本文件（txt）、利用python-pptx模块可以处理PowerPoint文件（ppt&#x2F;pptx）、利用python-docx模块可以处理Word文件（doc&#x2F;docx）、利用xlutils、pandas、openpyxl等模块可以处理Excel文件（xls、xlsx）。 ​">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Test Article">
+<meta property="og:url" content="http://yoursite.com/2020/06/25/Test-Article/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="入门 | Python对文件的操作（初级）零、利用Python可以处理哪些常见的文件？​    利用File方法可以处理文本文件（txt）、利用python-pptx模块可以处理PowerPoint文件（ppt&#x2F;pptx）、利用python-docx模块可以处理Word文件（doc&#x2F;docx）、利用xlutils、pandas、openpyxl等模块可以处理Excel文件（xls、xlsx）。 ​">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-25T11:54:18.000Z">
+<meta property="article:modified_time" content="2020-06-25T11:55:23.046Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Test-Article" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/25/Test-Article/" class="article-date">
+  <time datetime="2020-06-25T11:54:18.000Z" itemprop="datePublished">2020-06-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Test Article
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="入门-Python对文件的操作（初级）"><a href="#入门-Python对文件的操作（初级）" class="headerlink" title="入门 | Python对文件的操作（初级）"></a>入门 | Python对文件的操作（初级）</h4><h5 id="零、利用Python可以处理哪些常见的文件？"><a href="#零、利用Python可以处理哪些常见的文件？" class="headerlink" title="零、利用Python可以处理哪些常见的文件？"></a>零、利用Python可以处理哪些常见的文件？</h5><p>​    利用<code>File</code>方法可以处理文本文件（<code>txt</code>）、利用<code>python-pptx</code>模块可以处理<code>PowerPoint</code>文件（<code>ppt/pptx</code>）、利用<code>python-docx</code>模块可以处理<code>Word</code>文件（<code>doc/docx</code>）、利用<code>xlutils</code>、<code>pandas</code>、<code>openpyxl</code>等模块可以处理<code>Excel</code>文件（<code>xls</code>、<code>xlsx</code>）。</p>
+<p>​    本文会讲述基于<code>Flie</code>方法的处理文本文件的方法，其他将会在后续文章中介绍。</p>
+<h5 id="一、Open-函数详解"><a href="#一、Open-函数详解" class="headerlink" title="一、Open()函数详解"></a>一、Open()函数详解</h5><p>​    首先，在进行对文件的一切操作之前，我们需要打开想要操作的文件。这时，我们需要用到<code>open()</code>函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#open函数常见形式</span></span><br><span class="line">open(file,mode=<span class="string">'mode'</span>)<span class="comment">#此处的mode代指模式命令，非具体指令，下方会给出详细表格。</span></span><br></pre></td></tr></table></figure>
+
+<p>​    <code>file</code>代表文件路径，此处你可以填写绝对路径或者相对路径。</p>
+<p>​    <strong>绝对路径：</strong>  </p>
+<p>​        概念：文件的真正存在的路径，是指从硬盘的根目录(盘符)开始，进行一级级目录指向文件。</p>
+<p>​        示例：<code>C:\Users\Gugu\OneDrive\桌面\摸鱼说明书.txt</code>就是一条绝对路径。</p>
+<p>​        获取方法（<code>Windows系统</code>）：在文件图标处，点击右键-属性-安全，对象名称后的字符串便是该文件的绝对路    径啦。</p>
+<p>​    <strong>相对路径：</strong></p>
+<p>​        概念：以当前路径为基准进行一级级目录指向被引用的资源文件。 <strong>当前路径</strong>。当前路径是指你的这段代码运    行时的工作目录。</p>
+<p>​        获取方法：首先要通过下方代码块中的方法获取当前路径，然后截取你准备选择的文件以此路径为基准的路径。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#当前路径获取方法</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">print</span> (os.getcwd())</span><br></pre></td></tr></table></figure>
+
+<p>​        我们假设所获取的当前路径是<code>C:\Users\Gugu</code>，那么如果如果想要访问<strong>绝对路径</strong>一例中的文件的话，相对路    径便是<code>OneDrive\桌面\摸鱼说明书.txt</code>。</p>
+<p>​    <code>mode</code>代表打开文件的方式，下表列举了常见的打开方式。</p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>w</td>
+<td>打开一个文件只用于写入，若该文件已存在则打开文件，不存在则创建新文件。从文件开头开始编辑，即原有内容会被删除。</td>
+</tr>
+<tr>
+<td>a</td>
+<td>打开一个文件用于追加，若该文件已存在则打开文件，不存在则创建新文件。文件指针将会放在文件的结尾。也就是说，新的内容将会被写入到已有内容之后，不会影响原有内容。</td>
+</tr>
+<tr>
+<td>r</td>
+<td>以只读方式打开文件。文件的指针将会放在文件的开头。这是默认模式。</td>
+</tr>
+<tr>
+<td>+</td>
+<td>打开一个文件进行更新(可读可写)。</td>
+</tr>
+</tbody></table>
+<p>​    打开文件示例（使用相对路径）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file=open(<span class="string">r'OneDrive\桌面\摸鱼说明书.txt'</span>,<span class="string">'a'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>​    上例代表将打开的文件赋值给<code>file</code>变量。读者亦可使用<code>with open() as</code>的语法来打开文件，语法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">path=<span class="string">r'OneDrive\桌面\摸鱼说明书.txt'</span></span><br><span class="line"><span class="keyword">with</span> open (path,<span class="string">'a'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="comment">#后续语句</span></span><br></pre></td></tr></table></figure>
+
+<p>​    上文中出现的<code>r&#39;&#39;</code>语句为去除转移字符之意，此处将不会介绍其中细节。（前面的文章中曾讲解过）</p>
+<p>​    <code>f</code>与上例中的<code>file</code>相同，都保存着打开的文件。但是直接使用<code>open()</code>与使用<code>with open() as</code>语法仍存在着差异。在没有特殊需求的情况下，推荐读者使用<code>with open() as</code>语法。原因如下：</p>
+<p>​    1.用<code>open()</code>打开的文件需要后续添加<code>file.close()</code>语句来关闭文件，而<code>with</code>语句会在执行到语句末尾的时候自动关闭文件。</p>
+<p>​    2.使用<code>open()</code>打开文件的过程中，如果出现了异常则会直接报错，<code>close()</code>函数无法执行。但<code>with</code>语句会自动关闭文件，即使执行过程中出现了异常。</p>
+<h5 id="二、File方法中的常见操作"><a href="#二、File方法中的常见操作" class="headerlink" title="二、File方法中的常见操作"></a>二、File方法中的常见操作</h5><p>​    下表列举了File方法中常见的操作。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>file.close()</code></td>
+<td>关闭文件。关闭后文件不能再进行读写操作。</td>
+</tr>
+<tr>
+<td><code>file.next()</code></td>
+<td>返回文件下一行。</td>
+</tr>
+<tr>
+<td><code>file.read([size\])</code></td>
+<td>从文件读取指定的字节数，如果未给定或为负则读取所有。</td>
+</tr>
+<tr>
+<td><code>file.readline([size\])</code></td>
+<td>读取整行，包括 “\n” 字符。</td>
+</tr>
+<tr>
+<td><code>file.readlines([sizeint\])</code></td>
+<td>读取所有行并返回列表，当给定sizeint&gt;0时读取对应字节数。</td>
+</tr>
+<tr>
+<td><code>file.seek(offset[, whence\])</code></td>
+<td>设置文件当前位置</td>
+</tr>
+<tr>
+<td><code>file.tell()</code></td>
+<td>返回文件当前位置。</td>
+</tr>
+<tr>
+<td><code>file.write(str)</code></td>
+<td>将字符串写入文件，返回的是写入的字符长度。</td>
+</tr>
+<tr>
+<td><code>file.writelines(sequence)</code></td>
+<td>向文件写入一个序列字符串列表，如果需要换行则要自己加入每行的换行符。</td>
+</tr>
+</tbody></table>
+<p>​    下面将会给出一段示例代码，实现了自动化编写<strong>2020年2月明日方舟摸鱼说明书</strong>的功能。为了简单起见，我们将会循环使用12名干员，每日派出两名来分别参加随机工作，以此规则来设计工作计划表。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">staffs=[<span class="string">'艾雅法拉'</span>,<span class="string">'塞雷娅'</span>,<span class="string">'闪灵'</span>,<span class="string">'蓝毒'</span>,<span class="string">'德克萨斯'</span>,<span class="string">'推进之王'</span>,<span class="string">'布洛卡'</span>,<span class="string">'星极'</span>,<span class="string">'雷蛇'</span>,<span class="string">'白面鸮'</span>,<span class="string">'华法琳'</span>,<span class="string">'阿米娅'</span>]</span><br><span class="line">jobs=[<span class="string">'在贸易站里接订单'</span>,<span class="string">'在制造站炼金'</span>,<span class="string">'在控制中枢站岗'</span>,<span class="string">'在办公室跟伊桑捉迷藏'</span>,<span class="string">'在游戏关卡中打架'</span>,<span class="string">'在主页叫博士起床'</span>]</span><br><span class="line">days=[<span class="string">'六'</span>,<span class="string">'日'</span>,<span class="string">'一'</span>,<span class="string">'二'</span>,<span class="string">'三'</span>,<span class="string">'四'</span>,<span class="string">'五'</span>]</span><br><span class="line">path=<span class="string">r'OneDrive\桌面\摸鱼说明书.txt'</span></span><br><span class="line"><span class="keyword">with</span> open (path,<span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">30</span>):<span class="comment">#2020年的2月有29天,2月1日为星期六</span></span><br><span class="line">        index1=random.randint(<span class="number">0</span>,<span class="number">5</span>)</span><br><span class="line">        index2=random.randint(<span class="number">0</span>,<span class="number">5</span>)<span class="comment">#生成两个随机数</span></span><br><span class="line">        f.write(<span class="string">'2020年2月%s日，星期%s。\n'</span>%(str(i),days[i%<span class="number">7</span><span class="number">-1</span>]))</span><br><span class="line">        f.write(<span class="string">'   第一干员：%s%s。\n'</span>%(staffs[i%<span class="number">6</span>],jobs[index1]))</span><br><span class="line">        f.write(<span class="string">'   第二干员：%s%s。\n'</span>%(staffs[i%<span class="number">6</span>+<span class="number">5</span>],jobs[index2]))</span><br></pre></td></tr></table></figure>
+
+<p>​    执行上述代码即可获得<strong>2020年2月明日方舟摸鱼说明书</strong>啦。效果预览：</p>
+<h5 id="三、练习题"><a href="#三、练习题" class="headerlink" title="三、练习题"></a>三、练习题</h5><p>​    试着编写你喜欢的一款游戏的年度摸鱼说明书吧，想想跟上面的例子有什么不同。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/25/Test-Article/" data-id="ckbuqcmzz0000ngvf9tah6vk0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/25/Test-Article/">Test Article</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/25/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
