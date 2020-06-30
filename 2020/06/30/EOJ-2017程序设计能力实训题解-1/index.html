@@ -142,15 +142,22 @@
 <h5 id="1001-A-B-Problem"><a href="#1001-A-B-Problem" class="headerlink" title="#1001. A+B Problem"></a>#1001. A+B Problem</h5><p>描述：最基础的语言题。</p>
 <p>难点：可能在于如何在不知道行数的情况下输入，使用下面的语句即可实现。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b)</span><br></pre></td></tr></table></figure>
-
 <h5 id="1002-几位数？"><a href="#1002-几位数？" class="headerlink" title="#1002.  几位数？"></a>#1002.  几位数？</h5><p>描述：常规的做法应该是循环整数求位数，在本例中可以直接使用获取字符串长度的方法。<br>相关方法：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> str;</span><br><span class="line"><span class="keyword">int</span> length = str.<span class="built_in">size</span>();	<span class="comment">//获取字符串长度的方法</span></span><br></pre></td></tr></table></figure>
-
 <h5 id="1003-计算a的n次方"><a href="#1003-计算a的n次方" class="headerlink" title="#1003. 计算a的n次方"></a>#1003. 计算a的n次方</h5><p>描述：虽然在本题中常规方法并不会导致超时，但常规方法时间复杂度较高。因此将以快速幂方法来实现。</p>
-<p>讲解：<br>$$<br>\begin{equation}<br>\label{eq6}<br>a^n=\left{<br>\begin{aligned}<br>a*(a^\frac{n-1}2)^2&amp;,&amp;n<del>is</del>odd\<br>(a^{\frac n 2})^2 &amp; , &amp; n<del>is</del>even.<br>\end{aligned}<br>\right.<br>\end{equation}<br>$$<br>​    通过上述公式可知，当$n$为偶数时其规模可以降至一半。结合递归方法与位运算，可写出快速幂代码。</p>
+<p>讲解：</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\label{eq6}
+a^n=\left\{
+\begin{aligned}
+a*(a^\frac{n-1}2)^2&,&n~is~odd\\
+(a^{\frac n 2})^2 & , & n~is~even.
+\end{aligned}
+\right.
+\end{equation}</script><p>​    通过上述公式可知，当$n$为偶数时其规模可以降至一半。结合递归方法与位运算，可写出快速幂代码。</p>
 <p>​    其中，通过位与运算来实现判断奇偶，右移操作来实现除2可以提升性能。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">pow</span><span class="params">(ll a, ll n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (n &amp; <span class="number">1</span>) &#123;	<span class="comment">//n为奇数时</span></span><br><span class="line">		<span class="keyword">return</span> (a * <span class="built_in">pow</span>(a, n - <span class="number">1</span>));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> (<span class="built_in">pow</span>(a, n &gt;&gt; <span class="number">1</span>) * <span class="built_in">pow</span>(a, n &gt;&gt; <span class="number">1</span>));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h5 id="1004-值班"><a href="#1004-值班" class="headerlink" title="#1004. 值班"></a>#1004. 值班</h5><p>描述：只需判断是否有30条记录，简单的计数题。</p>
 <h5 id="1005-SQUINT"><a href="#1005-SQUINT" class="headerlink" title="#1005. SQUINT"></a>#1005. SQUINT</h5><p>描述：求平方根，同时需要向上取整。</p>
 <p>讲解：</p>
@@ -158,9 +165,10 @@
 <p>​    1.使用库函数<code>sqrt</code>求平方根，需要<code>math.h</code>头文件。</p>
 <p>​    2.使用二分法求平方根。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="built_in">max</span>-<span class="built_in">min</span>&gt;<span class="number">0.1</span>)&#123;	<span class="comment">//精度</span></span><br><span class="line">        <span class="keyword">if</span> (mid * mid &gt; num) &#123;</span><br><span class="line">            <span class="built_in">max</span> = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">min</span> = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        mid = (<span class="built_in">max</span> + <span class="built_in">min</span>) / <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
 <p>​    3.使用牛顿迭代法求平方根</p>
-<p><img src="https://img-blog.csdnimg.cn/20190610000053201.png" alt="在这里插入图片描述"><br>$$<br>f(x)=x^2-n\<br>$$<br>​    基本思路是不断逼近使得$f(x)=0$的点，逼近方法为：作曲线上一点$(x_n,y_n)$的切线，求其与$x$轴的交点$(x_{n+1},0)$，随后求得点$(x_{n+1},y_{n+1})$的切线，以此类推。</p>
+<p><img src="https://img-blog.csdnimg.cn/20190610000053201.png" alt="在这里插入图片描述"></p>
+<script type="math/tex; mode=display">
+f(x)=x^2-n\\</script><p>​    基本思路是不断逼近使得$f(x)=0$的点，逼近方法为：作曲线上一点$(x<em>n,y_n)$的切线，求其与$x$轴的交点$(x</em>{n+1},0)$，随后求得点$(x<em>{n+1},y</em>{n+1})$的切线，以此类推。</p>
 <p>​    详细求解过程与代码稍后更新。（先update一个版本再说哈哈）</p>
 
     </div>
