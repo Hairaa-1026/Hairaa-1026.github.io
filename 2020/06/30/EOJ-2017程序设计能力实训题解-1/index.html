@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta name="keywords" content="hexo, autumn" />
+    <title>
+        Hairaa&#39;s Blog
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/favicon.ico" />
+     
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css" />
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@2.0.0/dist/main.js"></script>
+
+    <script>
+        infiniteScroll()
+
+        window.addEventListener('DOMContentLoaded', function () {
+            const [
+                mainTitle,
+                mobileMenu,
+                mobileMainTitle,
+                mobileMenuBtn,
+                ipadMenuBtn,
+                aside,
+                closeBtn,
+            ] = getEle(
+                '#main-title',
+                '.mobile-menu',
+                '.mobile-menu h3',
+                '.mobile-menu button',
+                '.ipad-menu',
+                'aside',
+                'aside .close',
+            )
+            const io = new IntersectionObserver(entries => {
+                if (entries[0].intersectionRatio <= 0) {
+                    mobileMainTitle.classList.remove('invisibile')
+                } else {
+                    mobileMainTitle.classList.add('invisibile')
+                }
+            })
+            io.observe(mainTitle)
+
+            clickToggleAside(mobileMenuBtn)
+            clickToggleAside(ipadMenuBtn)
+            clickToggleAside(closeBtn, false)
+
+            const isMenuVisible = window.getComputedStyle(mobileMenu).display !== 'none'
+            if (isMenuVisible) document.body.style.background = 'none'
+
+            function getEle(...args) {
+                return args.map(arg => document.querySelector(arg))
+            }
+
+            function clickToggleAside(btn, show = true) {
+                btn.addEventListener('click', function () {
+                    if (show) {
+                        aside.style.display = 'block'
+                    } else {
+                        aside.style.display = 'none'
+                    }
+                })
+            }
+        })
+    </script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+    <div class="container">
+        <header class="header">
+    <nav class="mobile-menu" style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <h3 class="invisibile">
+            <a href="/" class="logo">
+                Hairaa&#39;s Blog
+            </a>
+        </h3>
+        <button class="menu">menu</button>
+    </nav>
+
+    <button class="ipad-menu menu">menu</button>
+
+    <h1 class="title" id="main-title">
+        <a href="/" class="logo">
+            Hairaa&#39;s Blog
+        </a>
+    </h1>
+    <h2 class="desc">
+        Record
+    </h2>
+
+    <div class="links">
+        <ul>
+            
+            <li>
+                <a href="https://github.com/FrontendSophie" target="_blank" rel="noopener">
+                    Github
+                </a>
+            </li>
+            
+            <li>
+                <a href="https://www.linkedin.com/in/frontendsophie/" target="_blank" rel="noopener">
+                    LinkedIn
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</header>
+        <main class="main">
+            <article class="post">
+    
+    
+    
+    <h2 class="post-title">
+        EOJ-2017程序设计能力实训题解-1
+    </h2>
+    <ul class="post-date">
+        <li>
+            2020-06-30
+        </li>
+        <li>
+            Hairaa
+        </li>
+    </ul>
+    <div class="post-content">
+        <h4 id="EOJ-2017程序设计能力实训题解-1（1001-1005）"><a href="#EOJ-2017程序设计能力实训题解-1（1001-1005）" class="headerlink" title="EOJ-2017程序设计能力实训题解-1（1001-1005）"></a>EOJ-2017程序设计能力实训题解-1（1001-1005）</h4><p>题目链接：<a href="https://acm.ecnu.edu.cn/contest/43/" target="_blank" rel="noopener">https://acm.ecnu.edu.cn/contest/43/</a></p>
+<p>本次更新的题目主要涉及到的知识点有语言练习、排序和表达式。难度在该题集中都为<code>naive</code>。</p>
+<p>由于题目难度不算太高，本期题解将会对题目进行简要讲解。</p>
+<p>本地测试环境：Visual Studio 2019</p>
+<p>编程语言：C++</p>
+<h5 id="1001-A-B-Problem"><a href="#1001-A-B-Problem" class="headerlink" title="#1001. A+B Problem"></a>#1001. A+B Problem</h5><p>描述：最基础的语言题。</p>
+<p>难点：可能在于如何在不知道行数的情况下输入，使用下面的语句即可实现。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b)</span><br></pre></td></tr></table></figure>
+
+<h5 id="1002-几位数？"><a href="#1002-几位数？" class="headerlink" title="#1002.  几位数？"></a>#1002.  几位数？</h5><p>描述：常规的做法应该是循环整数求位数，在本例中可以直接使用获取字符串长度的方法。<br>相关方法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> str;</span><br><span class="line"><span class="keyword">int</span> length = str.<span class="built_in">size</span>();	<span class="comment">//获取字符串长度的方法</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="1003-计算a的n次方"><a href="#1003-计算a的n次方" class="headerlink" title="#1003. 计算a的n次方"></a>#1003. 计算a的n次方</h5><p>描述：虽然在本题中常规方法并不会导致超时，但常规方法时间复杂度较高。因此将以快速幂方法来实现。</p>
+<p>讲解：<br>$$<br>\begin{equation}<br>\label{eq6}<br>a^n=\left{<br>\begin{aligned}<br>a*(a^\frac{n-1}2)^2&amp;,&amp;n<del>is</del>odd\<br>(a^{\frac n 2})^2 &amp; , &amp; n<del>is</del>even.<br>\end{aligned}<br>\right.<br>\end{equation}<br>$$<br>​    通过上述公式可知，当$n$为偶数时其规模可以降至一半。结合递归方法与位运算，可写出快速幂代码。</p>
+<p>​    其中，通过位与运算来实现判断奇偶，右移操作来实现除2可以提升性能。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">pow</span><span class="params">(ll a, ll n)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (n &amp; <span class="number">1</span>) &#123;	<span class="comment">//n为奇数时</span></span><br><span class="line">		<span class="keyword">return</span> (a * <span class="built_in">pow</span>(a, n - <span class="number">1</span>));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> (<span class="built_in">pow</span>(a, n &gt;&gt; <span class="number">1</span>) * <span class="built_in">pow</span>(a, n &gt;&gt; <span class="number">1</span>));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="1004-值班"><a href="#1004-值班" class="headerlink" title="#1004. 值班"></a>#1004. 值班</h5><p>描述：只需判断是否有30条记录，简单的计数题。</p>
+<h5 id="1005-SQUINT"><a href="#1005-SQUINT" class="headerlink" title="#1005. SQUINT"></a>#1005. SQUINT</h5><p>描述：求平方根，同时需要向上取整。</p>
+<p>讲解：</p>
+<p>​    0.取整方法：<code>ceil()</code>向上取整，<code>floor()</code>向下取整。</p>
+<p>​    1.使用库函数<code>sqrt</code>求平方根，需要<code>math.h</code>头文件。</p>
+<p>​    2.使用二分法求平方根。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(<span class="built_in">max</span>-<span class="built_in">min</span>&gt;<span class="number">0.1</span>)&#123;	<span class="comment">//精度</span></span><br><span class="line">        <span class="keyword">if</span> (mid * mid &gt; num) &#123;</span><br><span class="line">            <span class="built_in">max</span> = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">min</span> = mid;</span><br><span class="line">        &#125;</span><br><span class="line">        mid = (<span class="built_in">max</span> + <span class="built_in">min</span>) / <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    3.使用牛顿迭代法求平方根</p>
+<p><img src="https://img-blog.csdnimg.cn/20190610000053201.png" alt="在这里插入图片描述"><br>$$<br>f(x)=x^2-n\<br>$$<br>​    基本思路是不断逼近使得$f(x)=0$的点，逼近方法为：作曲线上一点$(x_n,y_n)$的切线，求其与$x$轴的交点$(x_{n+1},0)$，随后求得点$(x_{n+1},y_{n+1})$的切线，以此类推。</p>
+<p>​    详细求解过程与代码稍后更新。（先update一个版本再说哈哈）</p>
+
+    </div>
+</article>
+        </main>
+        <aside class="aside">
+            <div class="close"></div>
+            <section class="aside-section">
+                
+    <h1>Categories</h1>
+
+    
+
+            </section>
+            <section class="aside-section">
+                
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a></li></ul>
+
+
+            </section>
+            <section class="aside-section tag">
+                
+    <h1>Tags</h1>
+
+    
+
+            </section>
+        </aside>
+    </div>
+</body>
+
+</html>
