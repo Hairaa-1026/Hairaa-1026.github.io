@@ -173,7 +173,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-06-09 08:50:35 / Modified: 09:14:55" itemprop="dateCreated datePublished" datetime="2021-06-09T08:50:35+08:00">2021-06-09</time>
+              <time title="Created: 2021-06-09 08:50:35 / Modified: 09:23:49" itemprop="dateCreated datePublished" datetime="2021-06-09T08:50:35+08:00">2021-06-09</time>
             </span>
 
           
@@ -214,7 +214,7 @@
 <p>$2^n$的二进制表示的特点是：最高位为1，剩余位为0。</p>
 <p>$2^n-1$的二进制表示的特点是：最高位为0，剩余位为1。（以$2^n$的长度为基准）</p>
 <p>下面以8为例：</p>
-<p>| $2^n$ | $2^n-1$ |<br>| ——- | ———- |<br>| 8     | 7       |<br>| 1000  | 0111    |</p>
+<p>| $2^n$ | $2^n-1$ |<br>| ——- | ——- |<br>| 8     | 7       |<br>| 1000  | 0111    |</p>
 <p>因此只需保证<code>(n &amp; n - 1) == 0</code>，同时<code>n &gt; 0</code>即可满足条件。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfTwo</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> n &gt; <span class="number">0</span> &amp;&amp; (n &amp; n - <span class="number">1</span>) == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
