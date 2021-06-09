@@ -20,22 +20,19 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="控制玩手机的第一周！（7&#x2F;19-7&#x2F;25）​    虽然终于开始放暑假了，但是由于大量课程需要返校考试的缘故仍然需要控制手机的使用时间，以达到较好的学习效果。 ​    实际上，控制屏幕使用时间也并非应该是期末周或是需要集中学习时才采取的策略。为了平日里能够更加专注于自我提升或者娱乐，减少手机的使用时间是必要的。 ​    然而，为什么说减少手机使用时间可以更加专注于娱乐？在观察了过去三周的手机屏">
+  <meta name="description" content="2021-6-9 LeetCode记录    难度 数量     总计 2   Easy 2     ​    今天做了5月底的两道每日一题。  2的幂： 位运算问题。 $2^n$的二进制表示的特点是：最高位为1，剩余位为0。 $2^n-1$的二进制表示的特点是：最高位为0，剩余位为1。（以$2^n$的长度为基准） 下面以8为例： | $2^n$ | $2^n-1$ || ——- | ———- |">
 <meta property="og:type" content="article">
-<meta property="og:title" content="戒除手机滥用经验贴（第一周）">
-<meta property="og:url" content="http://yoursite.com/2020/08/04/%E6%88%92%E9%99%A4%E6%89%8B%E6%9C%BA%E6%BB%A5%E7%94%A8%E7%BB%8F%E9%AA%8C%E8%B4%B4%EF%BC%88%E7%AC%AC%E4%B8%80%E5%91%A8%EF%BC%89/index.html">
+<meta property="og:title" content="2021-6-9-LeetCode记录">
+<meta property="og:url" content="http://yoursite.com/2021/06/09/2021-6-9-LeetCode%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Hairaa&#39;s Blog">
-<meta property="og:description" content="控制玩手机的第一周！（7&#x2F;19-7&#x2F;25）​    虽然终于开始放暑假了，但是由于大量课程需要返校考试的缘故仍然需要控制手机的使用时间，以达到较好的学习效果。 ​    实际上，控制屏幕使用时间也并非应该是期末周或是需要集中学习时才采取的策略。为了平日里能够更加专注于自我提升或者娱乐，减少手机的使用时间是必要的。 ​    然而，为什么说减少手机使用时间可以更加专注于娱乐？在观察了过去三周的手机屏">
+<meta property="og:description" content="2021-6-9 LeetCode记录    难度 数量     总计 2   Easy 2     ​    今天做了5月底的两道每日一题。  2的幂： 位运算问题。 $2^n$的二进制表示的特点是：最高位为1，剩余位为0。 $2^n-1$的二进制表示的特点是：最高位为0，剩余位为1。（以$2^n$的长度为基准） 下面以8为例： | $2^n$ | $2^n-1$ || ——- | ———- |">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200804173948448.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTIzMzEwMA==,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200804174003995.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTIzMzEwMA==,size_16,color_FFFFFF,t_70">
-<meta property="article:published_time" content="2020-08-04T09:29:07.515Z">
-<meta property="article:modified_time" content="2020-08-04T09:41:28.018Z">
+<meta property="article:published_time" content="2021-06-09T00:50:35.000Z">
+<meta property="article:modified_time" content="2021-06-09T01:14:55.066Z">
 <meta property="article:author" content="Hairaa">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200804173948448.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTIzMzEwMA==,size_16,color_FFFFFF,t_70">
 
-<link rel="canonical" href="http://yoursite.com/2020/08/04/%E6%88%92%E9%99%A4%E6%89%8B%E6%9C%BA%E6%BB%A5%E7%94%A8%E7%BB%8F%E9%AA%8C%E8%B4%B4%EF%BC%88%E7%AC%AC%E4%B8%80%E5%91%A8%EF%BC%89/">
+<link rel="canonical" href="http://yoursite.com/2021/06/09/2021-6-9-LeetCode%E8%AE%B0%E5%BD%95/">
 
 
 <script id="page-configurations">
@@ -48,7 +45,7 @@
   };
 </script>
 
-  <title>戒除手机滥用经验贴（第一周） | Hairaa's Blog</title>
+  <title>2021-6-9-LeetCode记录 | Hairaa's Blog</title>
   
 
 
@@ -154,7 +151,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/04/%E6%88%92%E9%99%A4%E6%89%8B%E6%9C%BA%E6%BB%A5%E7%94%A8%E7%BB%8F%E9%AA%8C%E8%B4%B4%EF%BC%88%E7%AC%AC%E4%B8%80%E5%91%A8%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/06/09/2021-6-9-LeetCode%E8%AE%B0%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -167,7 +164,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          戒除手机滥用经验贴（第一周）
+          2021-6-9-LeetCode记录
         </h1>
 
         <div class="post-meta">
@@ -178,7 +175,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-08-04 17:29:07 / Modified: 17:41:28" itemprop="dateCreated datePublished" datetime="2020-08-04T17:29:07+08:00">2020-08-04</time>
+              <time title="Created: 2021-06-09 08:50:35 / Modified: 09:14:55" itemprop="dateCreated datePublished" datetime="2021-06-09T08:50:35+08:00">2021-06-09</time>
             </span>
 
           
@@ -192,24 +189,54 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="控制玩手机的第一周！（7-19-7-25）"><a href="#控制玩手机的第一周！（7-19-7-25）" class="headerlink" title="控制玩手机的第一周！（7/19-7/25）"></a>控制玩手机的第一周！（7/19-7/25）</h3><p>​    虽然终于开始放暑假了，但是由于大量课程需要返校考试的缘故仍然需要控制手机的使用时间，以达到较好的学习效果。</p>
-<p>​    实际上，控制屏幕使用时间也并非应该是期末周或是需要集中学习时才采取的策略。为了平日里能够更加专注于自我提升或者娱乐，减少手机的使用时间是必要的。</p>
-<p>​    然而，为什么说减少手机使用时间可以更加专注于娱乐？在观察了过去三周的手机屏幕使用数据后，得出了以下的结论：</p>
-<p>​    每周的总使用时间达58-69小时，日均8-10小时。占据比例最大的是社交类软件（57%-62%），总屏幕使用时间占据每周总时间（7*24h）的近34%-41%。</p>
-<p>​    可以认为一周除去睡觉的时间外大部分时间都在使用手机，而大部分时间都用在了浏览社交软件上，实际上这并不能达到良好的娱乐体验，只是在无意义地刷新与浏览碎片化的信息。</p>
-<p><img src="https://img-blog.csdnimg.cn/20200804173948448.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTIzMzEwMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>​    出于上述的背景和原因，我对手机使用时间进行了控制。具体的措施是：社交软件使用时间限制在3小时/每天之内，12：30-7：00之间禁用手机。（这一功能可以通过iOS系统中的“屏幕使用时间”功能来实现）</p>
-<p>​    成果如下图所示，由于控制使用时间的举措从周二开始，因此社交类软件总使用时间并未能够降至24小时之内。但较其上周已经有了显著的降低，总时间降幅达42%。</p>
-<p><img src="https://img-blog.csdnimg.cn/20200804174003995.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTIzMzEwMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>​    实际上，要想做到社交软件限制在每天3小时内是有一定难度的。在AppStore中，微信、小红书、微博、知乎等软件都被归类于社交软件。</p>
-<p>​    作为一名新晋追星族，此前从未下载过的小红书与微博成为了我近期了解偶像动态必备的App。尤其是微博，每天会数次访问以查看快乐女士李斯丹妮的微博及衍生言论、图片等。在控制时间之前，我常常会仔细浏览粉丝群（目前已经是一个3000人的大群了，消息频率极高）中的消息，查看Timeline上的小视频、微博等碎片化信息。</p>
-<p>​    微信已经是现代人难以离开的社交软件，许多人（俺）因为担心错过消息而频繁检查微信消息，顺便浏览公众号、朋友圈等。为了控制手机的使用，我再次关闭了朋友圈。（此前在正式学期期间常常会关闭朋友圈数周之久以专注于学习。）</p>
-<p>​    知乎上新奇的知识与讨论常能让人沉迷其中，但在我意识到知乎会让人不断浏览无用的知识后，知乎App在我的手机中已经近3年没有长期留存过了。（刚放假想轻松几天时可能会下载）</p>
-<p>​    在设定了手机使用时间的限制之后，最大的难题就是将社交软件使用时间限制在3小时之内。无意识地浏览信息会让使用时间在不知不觉中骤增，导致在下午或傍晚时手机就提醒你只剩5分钟可以使用社交软件，然而剩余的时间并不足以维系当日正常的社交活动。</p>
-<p>​    为了达到社交&lt;3小时的目标，我选择每次拿起手机后急促地处理微信未读消息、简单浏览微博（只看快乐女士李斯丹妮本人的微博是否更新，不关心衍生话题与粉丝群）、关闭朋友圈。这样的举措使得我的手机使用时间大大减少，同时在一定范围内限制了我熬夜的恶习。</p>
-<p>​    当然，手机上设定的限制只需要简单操作就可以取消，要完全借助外力戒除手机的滥用是非常困难的。</p>
-<p>​    如果你也想控制手机的使用的话，不妨想一想你为什么要这样做？应该如何行动，又如何能够保持自律不打破自己设定的规则呢？</p>
-<p>​    对我而言，原因和行动已在前文中阐释。而自律的方法，或许就是保持规则的神圣感，在任何情况下都不试图去打破它。</p>
+        <h4 id="2021-6-9-LeetCode记录"><a href="#2021-6-9-LeetCode记录" class="headerlink" title="2021-6-9 LeetCode记录"></a>2021-6-9 LeetCode记录</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>难度</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>总计</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Easy</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>​    今天做了5月底的两道每日一题。</p>
+<ol>
+<li><p><code>2的幂</code>：</p>
+<p>位运算问题。</p>
+<p>$2^n$的二进制表示的特点是：最高位为1，剩余位为0。</p>
+<p>$2^n-1$的二进制表示的特点是：最高位为0，剩余位为1。（以$2^n$的长度为基准）</p>
+<p>下面以8为例：</p>
+<p>| $2^n$ | $2^n-1$ |<br>| ——- | ———- |<br>| 8     | 7       |<br>| 1000  | 0111    |</p>
+<p>因此只需保证<code>(n &amp; n - 1) == 0</code>，同时<code>n &gt; 0</code>即可满足条件。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfTwo</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> n &gt; <span class="number">0</span> &amp;&amp; (n &amp; n - <span class="number">1</span>) == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>4的幂</code>：</p>
+<p>与上题相似的位运算问题，可以通过两种方法求解。</p>
+<ul>
+<li><p>利用$4^n$的位数性质：</p>
+<p>​    在$2^n$性质的基础上，$4^n$的特点是最高位总是奇数位。因此构造出一个偶数位全1的整数$(10101010101010101010101010101010)_2$，表示为16进制为$(AAAAAAAA)_{16}$。</p>
+<p>​    将上述数字与$4^n$与操作之后应该得0，可以以此来判断。</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfFour</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> n &gt; <span class="number">0</span> &amp;&amp; (n &amp; (n - <span class="number">1</span>)) == <span class="number">0</span> &amp;&amp; (n &amp; <span class="number">0xaaaaaaaa</span>) == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>利用$4^n$的余数性质：</p>
+<p>​    对于$2^n$，满足同时为$4^n$的子集也满足模3余1，而不满足的子集满足模3余2。</p>
+<p>​    例如：16%3 = 1， 而8 % 3 = 2；</p>
+</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPowerOfFour</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> n &gt; <span class="number">0</span> &amp;&amp; (n &amp; (n - <span class="number">1</span>)) == <span class="number">0</span> &amp;&amp; (n % <span class="number">3</span>) == <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ol>
 
     </div>
 
@@ -225,13 +252,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/06/25/Hello-Hairaaa/" rel="prev" title="Hello Hairaaa!">
-      <i class="fa fa-chevron-left"></i> Hello Hairaaa!
+    <a href="/2021/05/27/2021-5-27-LeetCode%E8%AE%B0%E5%BD%95/" rel="prev" title="2021-5-27-LeetCode记录">
+      <i class="fa fa-chevron-left"></i> 2021-5-27-LeetCode记录
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/05/26/%E5%86%99%E5%9C%A8%E5%8D%9A%E5%AE%A2%E5%8D%B3%E5%B0%86%E5%BC%80%E9%80%9A%E4%B8%80%E5%91%A8%E5%B9%B4%E4%B9%8B%E9%99%85/" rel="next" title="写在博客即将开通一周年之际">
-      写在博客即将开通一周年之际 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -290,7 +314,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#控制玩手机的第一周！（7-19-7-25）"><span class="nav-number">1.</span> <span class="nav-text">控制玩手机的第一周！（7&#x2F;19-7&#x2F;25）</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#2021-6-9-LeetCode记录"><span class="nav-number">1.</span> <span class="nav-text">2021-6-9 LeetCode记录</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
